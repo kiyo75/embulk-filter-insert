@@ -112,7 +112,7 @@ module Embulk
         when :string
           # do nothing
         when :timestamp
-          column[:value] = Date.parse(column[:value])
+          column[:value] = Time.parse(column[:value]).to_i
         when :json
           column[:value] = JSON.parse(column[:value])
         else
